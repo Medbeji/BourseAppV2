@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		5009AF1B1D1C294400EACDB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF1A1D1C294400EACDB8 /* AppDelegate.swift */; };
-		5009AF1D1D1C294400EACDB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF1C1D1C294400EACDB8 /* ViewController.swift */; };
+		5009AF1D1D1C294400EACDB8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF1C1D1C294400EACDB8 /* HomeController.swift */; };
 		5009AF201D1C294400EACDB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5009AF1E1D1C294400EACDB8 /* Main.storyboard */; };
 		5009AF221D1C294400EACDB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5009AF211D1C294400EACDB8 /* Assets.xcassets */; };
 		5009AF251D1C294400EACDB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5009AF231D1C294400EACDB8 /* LaunchScreen.storyboard */; };
+		5009AF2E1D1C2A0E00EACDB8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF2D1D1C2A0E00EACDB8 /* Extensions.swift */; };
+		5009AF321D1C2A8E00EACDB8 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF311D1C2A8E00EACDB8 /* MenuBar.swift */; };
+		5009AF371D1C460C00EACDB8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF361D1C460C00EACDB8 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5009AF171D1C294400EACDB8 /* BourseV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BourseV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5009AF1A1D1C294400EACDB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5009AF1C1D1C294400EACDB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5009AF1C1D1C294400EACDB8 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		5009AF1F1D1C294400EACDB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5009AF211D1C294400EACDB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5009AF241D1C294400EACDB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5009AF261D1C294400EACDB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5009AF2D1D1C2A0E00EACDB8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5009AF311D1C2A8E00EACDB8 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		5009AF341D1C460B00EACDB8 /* BourseV2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BourseV2-Bridging-Header.h"; sourceTree = "<group>"; };
+		5009AF351D1C460C00EACDB8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		5009AF361D1C460C00EACDB8 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,43 @@
 		5009AF191D1C294400EACDB8 /* BourseV2 */ = {
 			isa = PBXGroup;
 			children = (
+				5009AF301D1C2A3500EACDB8 /* View */,
+				5009AF2F1D1C2A1C00EACDB8 /* Controller */,
+				5009AF2C1D1C2A0200EACDB8 /* Helpers */,
 				5009AF1A1D1C294400EACDB8 /* AppDelegate.swift */,
-				5009AF1C1D1C294400EACDB8 /* ViewController.swift */,
 				5009AF1E1D1C294400EACDB8 /* Main.storyboard */,
 				5009AF211D1C294400EACDB8 /* Assets.xcassets */,
 				5009AF231D1C294400EACDB8 /* LaunchScreen.storyboard */,
 				5009AF261D1C294400EACDB8 /* Info.plist */,
+				5009AF341D1C460B00EACDB8 /* BourseV2-Bridging-Header.h */,
 			);
 			path = BourseV2;
+			sourceTree = "<group>";
+		};
+		5009AF2C1D1C2A0200EACDB8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5009AF2D1D1C2A0E00EACDB8 /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		5009AF2F1D1C2A1C00EACDB8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5009AF351D1C460C00EACDB8 /* SWRevealViewController.h */,
+				5009AF361D1C460C00EACDB8 /* SWRevealViewController.m */,
+				5009AF1C1D1C294400EACDB8 /* HomeController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5009AF301D1C2A3500EACDB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5009AF311D1C2A8E00EACDB8 /* MenuBar.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5009AF1D1D1C294400EACDB8 /* ViewController.swift in Sources */,
+				5009AF1D1D1C294400EACDB8 /* HomeController.swift in Sources */,
+				5009AF2E1D1C2A0E00EACDB8 /* Extensions.swift in Sources */,
+				5009AF371D1C460C00EACDB8 /* SWRevealViewController.m in Sources */,
+				5009AF321D1C2A8E00EACDB8 /* MenuBar.swift in Sources */,
 				5009AF1B1D1C294400EACDB8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,10 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BourseV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alphalab.BourseV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BourseV2/BourseV2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -263,10 +306,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BourseV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alphalab.BourseV2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BourseV2/BourseV2-Bridging-Header.h";
 			};
 			name = Release;
 		};
