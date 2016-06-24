@@ -13,7 +13,7 @@ class ContentCollectionView: UIView , UICollectionViewDataSource, UICollectionVi
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.whiteColor()
+        cv.backgroundColor = UIColor.rgb(236, green: 236, blue: 236)
         cv.dataSource = self
         cv.delegate = self
         return cv
@@ -44,11 +44,11 @@ class ContentCollectionView: UIView , UICollectionViewDataSource, UICollectionVi
         return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(collectionView.frame.width, 65)
+        return CGSizeMake(collectionView.frame.width, 50)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 5
+        return 0
     }
     
     
@@ -62,37 +62,58 @@ class CustomCellFeed : BaseCell {
         return view
     }()
     
+    let verticalSeparator: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.lightGrayColor()
+        return view
+    }()
+    
     let titleCol: UILabel = {
         let text = UILabel()
-        text.font = UIFont.systemFontOfSize(13)
+        text.text = "CAC 40"
+        text.font = UIFont.systemFontOfSize(15)
         return text
     }()
     let price: UILabel = {
         let text = UILabel()
-        text.font = UIFont.systemFontOfSize(13)
+        text.text = "5.188,80"
+        text.font = UIFont.systemFontOfSize(15)
         return text
     }()
     let datePlace: UILabel = {
         let text = UILabel()
+        text.text  = "10:07:50 | Paris"
         text.font = UIFont.systemFontOfSize(12)
         return text
     }()
     let percentage: UILabel = {
         let text = UILabel()
+        text.text = "-3,80 (-0,03 %)"
         text.font = UIFont.systemFontOfSize(12)
         return text
     }()
     
     let imageView:UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "flech")?.imageWithRenderingMode(.AlwaysTemplate)
+        iv.image = UIImage(named: "next")?.imageWithRenderingMode(.AlwaysTemplate)
         iv.tintColor = UIColor.lightGrayColor()
         return iv
     }()
     
     override func setupViews() {
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.rgb(250, green: 250, blue: 250)
         addSubview(separatorView)
+        addSubview(verticalSeparator)
+        addSubview(titleCol)
+        addSubview(imageView)
+        addSubview(price)
+        
+        addConstraintsWithFormat("H:[v0]-8-[v1(1)]-1-[v2(50)]-0-|", views:price,verticalSeparator, imageView)
+        addConstraintsWithFormat("V:|-5-[v0(30)]", views: price)
+        addConstraintsWithFormat("V:|-3-[v0]-3-|", views: verticalSeparator)
+        addConstraintsWithFormat("V:|-5-[v0]|", views: imageView)
+        addConstraintsWithFormat("H:|-16-[v0]", views: titleCol)
+        addConstraintsWithFormat("V:|-5-[v0(30)]", views: titleCol)
         addConstraintsWithFormat("H:|[v0]|", views: separatorView)
         addConstraintsWithFormat("V:[v0(1)]-0-|", views: separatorView)
     }

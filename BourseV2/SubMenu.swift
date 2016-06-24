@@ -44,7 +44,7 @@ class SubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelegate, UI
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! MyCustomCell
         
         cell.textlabel.text = subMenuTitles[indexPath.row]
-        cell.tintColor = UIColor.redColor()
+        
         
         return cell
     }
@@ -71,7 +71,8 @@ class MyCustomCell: BaseCell {
     
     let textlabel: UILabel = {
         let iv = UILabel()
-        iv.font = UIFont.systemFontOfSize(13)
+        iv.textColor = UIColor.rgb(156, green: 156, blue: 156)
+        iv.font = UIFont.boldSystemFontOfSize(13.0)
         return iv
     }()
     
