@@ -89,6 +89,7 @@ class CustomCellFeed : BaseCell {
     let percentage: UILabel = {
         let text = UILabel()
         text.text = "-3,80 (-0,03 %)"
+        text.textColor = UIColor.redColor()
         text.font = UIFont.systemFontOfSize(12)
         return text
     }()
@@ -107,15 +108,26 @@ class CustomCellFeed : BaseCell {
         addSubview(titleCol)
         addSubview(imageView)
         addSubview(price)
+        addSubview(datePlace)
+        addSubview(percentage)
         
         addConstraintsWithFormat("H:[v0]-8-[v1(1)]-1-[v2(50)]-0-|", views:price,verticalSeparator, imageView)
-        addConstraintsWithFormat("V:|-5-[v0(30)]", views: price)
+        addConstraintsWithFormat("V:|-3-[v0(25)][v1]", views: price,percentage)
         addConstraintsWithFormat("V:|-3-[v0]-3-|", views: verticalSeparator)
-        addConstraintsWithFormat("V:|-5-[v0]|", views: imageView)
+        
+        addConstraintsWithFormat("V:|-3-[v0]|", views: imageView)
+        
         addConstraintsWithFormat("H:|-16-[v0]", views: titleCol)
-        addConstraintsWithFormat("V:|-5-[v0(30)]", views: titleCol)
+        addConstraintsWithFormat("V:|-3-[v0(25)][v1]", views: titleCol,datePlace)
+        
+        addConstraintsWithFormat("H:|-16-[v0]", views: datePlace)
+        
         addConstraintsWithFormat("H:|[v0]|", views: separatorView)
         addConstraintsWithFormat("V:[v0(1)]-0-|", views: separatorView)
+        
+        // align the percentage right w price right 
+        addConstraint(NSLayoutConstraint(item: percentage, attribute: .Right, relatedBy: .Equal, toItem: price, attribute: .Right, multiplier: 1, constant: 0))
+        
     }
     
 }
