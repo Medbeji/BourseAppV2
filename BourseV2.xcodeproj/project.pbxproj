@@ -15,6 +15,13 @@
 		5009AF2E1D1C2A0E00EACDB8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF2D1D1C2A0E00EACDB8 /* Extensions.swift */; };
 		5009AF321D1C2A8E00EACDB8 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF311D1C2A8E00EACDB8 /* MenuBar.swift */; };
 		5009AF371D1C460C00EACDB8 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF361D1C460C00EACDB8 /* SWRevealViewController.m */; };
+		5088F5531D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088F54B1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m */; };
+		5088F5541D1CAC4A002A6BC0 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088F54D1D1CAC4A002A6BC0 /* MMDrawerController.m */; };
+		5088F5551D1CAC4A002A6BC0 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088F5501D1CAC4A002A6BC0 /* MMDrawerVisualState.m */; };
+		5088F5561D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088F5521D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m */; };
+		5088F5581D1CB1D7002A6BC0 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5088F5571D1CB1D7002A6BC0 /* MenuVC.swift */; };
+		50D0230D1D1D3BB3008E5B8C /* SubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0230C1D1D3BB3008E5B8C /* SubMenu.swift */; };
+		50D0230F1D1D46B8008E5B8C /* ContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,18 @@
 		5009AF341D1C460B00EACDB8 /* BourseV2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BourseV2-Bridging-Header.h"; sourceTree = "<group>"; };
 		5009AF351D1C460C00EACDB8 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		5009AF361D1C460C00EACDB8 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		5088F54A1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		5088F54B1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		5088F54C1D1CAC4A002A6BC0 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
+		5088F54D1D1CAC4A002A6BC0 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
+		5088F54E1D1CAC4A002A6BC0 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		5088F54F1D1CAC4A002A6BC0 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
+		5088F5501D1CAC4A002A6BC0 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
+		5088F5511D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		5088F5521D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		5088F5571D1CB1D7002A6BC0 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		50D0230C1D1D3BB3008E5B8C /* SubMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubMenu.swift; sourceTree = "<group>"; };
+		50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +105,9 @@
 		5009AF2F1D1C2A1C00EACDB8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5009AF351D1C460C00EACDB8 /* SWRevealViewController.h */,
-				5009AF361D1C460C00EACDB8 /* SWRevealViewController.m */,
+				5009AF3A1D1C9CED00EACDB8 /* SideBar */,
 				5009AF1C1D1C294400EACDB8 /* HomeController.swift */,
+				5088F5571D1CB1D7002A6BC0 /* MenuVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -97,8 +116,28 @@
 			isa = PBXGroup;
 			children = (
 				5009AF311D1C2A8E00EACDB8 /* MenuBar.swift */,
+				50D0230C1D1D3BB3008E5B8C /* SubMenu.swift */,
+				50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		5009AF3A1D1C9CED00EACDB8 /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				5088F54A1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.h */,
+				5088F54B1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m */,
+				5088F54C1D1CAC4A002A6BC0 /* MMDrawerController.h */,
+				5088F54D1D1CAC4A002A6BC0 /* MMDrawerController.m */,
+				5088F54E1D1CAC4A002A6BC0 /* MMDrawerController+Subclass.h */,
+				5088F54F1D1CAC4A002A6BC0 /* MMDrawerVisualState.h */,
+				5088F5501D1CAC4A002A6BC0 /* MMDrawerVisualState.m */,
+				5088F5511D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.h */,
+				5088F5521D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m */,
+				5009AF351D1C460C00EACDB8 /* SWRevealViewController.h */,
+				5009AF361D1C460C00EACDB8 /* SWRevealViewController.m */,
+			);
+			name = SideBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,10 +213,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5009AF1D1D1C294400EACDB8 /* HomeController.swift in Sources */,
+				5088F5531D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m in Sources */,
+				5088F5541D1CAC4A002A6BC0 /* MMDrawerController.m in Sources */,
 				5009AF2E1D1C2A0E00EACDB8 /* Extensions.swift in Sources */,
+				5088F5551D1CAC4A002A6BC0 /* MMDrawerVisualState.m in Sources */,
 				5009AF371D1C460C00EACDB8 /* SWRevealViewController.m in Sources */,
+				5088F5561D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m in Sources */,
 				5009AF321D1C2A8E00EACDB8 /* MenuBar.swift in Sources */,
+				50D0230F1D1D46B8008E5B8C /* ContentCollectionView.swift in Sources */,
+				50D0230D1D1D3BB3008E5B8C /* SubMenu.swift in Sources */,
 				5009AF1B1D1C294400EACDB8 /* AppDelegate.swift in Sources */,
+				5088F5581D1CB1D7002A6BC0 /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +380,7 @@
 				5009AF2B1D1C294400EACDB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,29 +14,18 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Home"
         navigationController?.navigationBar.translucent = false
-        
-        // Button  
-        
-        //        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: view.frame.height))
-        //        btn.backgroundColor = .greenColor()
-        //        btn.setBackgroundImage(UIImage(named: "menu"), forState: UIControlState.Normal)
-        //        btn.addTarget(self, action: #selector(buttonAction), forControlEvents: .TouchUpInside)
-        //        
-        // Home Title
-        //        let titleLabel = UILabel(frame: CGRectMake(0, 0, view.frame.width - 32, view.frame.height))
-        //        titleLabel.text = "Home"
-        //        titleLabel.textColor = UIColor.blackColor()
-        //        titleLabel.font = UIFont.systemFontOfSize(20)
-        //        navigationItem.titleView = titleLabel
-        
         setupMenuBar()
         setupBarButtons()
+        
     }
     
     func setupBarButtons(){
-        let sideBar = UIBarButtonItem(image: UIImage(named: "menu")?.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(handleMore))
+        let sideBar = UIBarButtonItem(image: UIImage(named: "menu")?.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
+        //     self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         navigationItem.leftBarButtonItem =  sideBar
     }
+    
+    
     
     func handleMore() {
         print ("hello world ")
@@ -48,10 +37,26 @@ class HomeController: UIViewController {
         return mb
     }()
     
+    let subMenuBar: SubMenu = {
+        let smb = SubMenu()
+        return smb 
+    }()
+    
+    
+    let tabContent: ContentCollectionView = {
+        let tc = ContentCollectionView()
+        return tc
+    }()
+    
+    
     private func setupMenuBar() {
         view.addSubview(menuBar)
+        view.addSubview(subMenuBar)
+        view.addSubview(tabContent)
         view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
-        view.addConstraintsWithFormat("V:|[v0(65)]", views: menuBar)
+        view.addConstraintsWithFormat("H:|[v0]|", views: subMenuBar)
+        view.addConstraintsWithFormat("H:|[v0]|", views: tabContent)
+        view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, subMenuBar,tabContent)
     }
     
 }
