@@ -48,18 +48,58 @@ class HomeController: UIViewController {
         return tc
     }()
     
+    let tabContent1: TestContent = {
+        let tc = TestContent()
+        return tc
+    }()
     
     private func setupMenuBar() {
+        subMenuBar.homeController = self
+        
+        tabContent.hidden = false
+        tabContent1.hidden = true
         view.addSubview(menuBar)
         view.addSubview(subMenuBar)
         view.addSubview(tabContent)
+        view.addSubview(tabContent1)
+        
         tabContent.homeController = self
-        view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
-        view.addConstraintsWithFormat("H:|[v0]|", views: subMenuBar)
-        view.addConstraintsWithFormat("H:|[v0]|", views: tabContent)
-        view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, subMenuBar,tabContent)
+        tabContent1.homeController = self
+        
+        
+        settingConstraint()
+        
     }
     
+    func settingConstraint () {
+        if ( !tabContent.hidden ) {
+            print ( " tab content 1 is hidden")
+            view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
+            view.addConstraintsWithFormat("H:|[v0]|", views: subMenuBar)
+            view.addConstraintsWithFormat("H:|[v0]|", views: tabContent)
+            view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, subMenuBar,tabContent)
+        } else  if (!tabContent1.hidden) {
+            print ( " tab content 0 is hidden")
+            view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
+            view.addConstraintsWithFormat("H:|[v0]|", views: subMenuBar)
+            view.addConstraintsWithFormat("H:|[v0]|", views: tabContent1)
+            view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, subMenuBar,tabContent1)
+        }
+        
+    }
+    
+    func changingTab( tabID : Int) {
+        if tabID  == 0 {
+            tabContent.hidden = false
+            tabContent1.hidden = true
+            settingConstraint()
+        } else  if tabID == 1 {
+            tabContent1.hidden = false
+            tabContent.hidden = true
+            settingConstraint()
+        }
+        
+    }
     
     func showAppDetailForApp() {
         let layout = UICollectionViewFlowLayout()

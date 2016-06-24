@@ -11,6 +11,10 @@ import UIKit
 
 class SubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    var homeController: HomeController?
+    
+    
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -59,6 +63,10 @@ class SubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelegate, UI
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("View TaB from row \(indexPath.row)")
+        homeController?.changingTab(Int(indexPath.row))
     }
     
 }

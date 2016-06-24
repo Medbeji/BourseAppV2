@@ -23,6 +23,7 @@
 		50D0230D1D1D3BB3008E5B8C /* SubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0230C1D1D3BB3008E5B8C /* SubMenu.swift */; };
 		50D0230F1D1D46B8008E5B8C /* ContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */; };
 		50D023111D1D8EC0008E5B8C /* ObligationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D023101D1D8EC0008E5B8C /* ObligationDetailController.swift */; };
+		50F2280B1D1DAB7E00234D31 /* TestContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2280A1D1DAB7E00234D31 /* TestContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		50D0230C1D1D3BB3008E5B8C /* SubMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubMenu.swift; sourceTree = "<group>"; };
 		50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionView.swift; sourceTree = "<group>"; };
 		50D023101D1D8EC0008E5B8C /* ObligationDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObligationDetailController.swift; sourceTree = "<group>"; };
+		50F2280A1D1DAB7E00234D31 /* TestContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				5009AF311D1C2A8E00EACDB8 /* MenuBar.swift */,
 				50D0230C1D1D3BB3008E5B8C /* SubMenu.swift */,
 				50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */,
+				50F2280A1D1DAB7E00234D31 /* TestContent.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				50D0230D1D1D3BB3008E5B8C /* SubMenu.swift in Sources */,
 				5009AF1B1D1C294400EACDB8 /* AppDelegate.swift in Sources */,
 				5088F5581D1CB1D7002A6BC0 /* MenuVC.swift in Sources */,
+				50F2280B1D1DAB7E00234D31 /* TestContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
