@@ -72,7 +72,7 @@ class MyCustomCell: BaseCell {
     let textlabel: UILabel = {
         let iv = UILabel()
         iv.textColor = UIColor.rgb(156, green: 156, blue: 156)
-        iv.font = UIFont.boldSystemFontOfSize(13.0)
+        iv.font = UIFont.boldSystemFontOfSize(14.0)
         return iv
     }()
     

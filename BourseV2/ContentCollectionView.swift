@@ -10,6 +10,9 @@ import UIKit
 
 class ContentCollectionView: UIView , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     
+    var homeController: HomeController?
+    
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -35,7 +38,7 @@ class ContentCollectionView: UIView , UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 12
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -51,6 +54,10 @@ class ContentCollectionView: UIView , UICollectionViewDataSource, UICollectionVi
         return 0
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("View detail from row \(indexPath.row)")
+        homeController?.showAppDetailForApp()
+    }
     
 }
 
@@ -98,6 +105,7 @@ class CustomCellFeed : BaseCell {
         let iv = UIImageView()
         iv.image = UIImage(named: "next")?.imageWithRenderingMode(.AlwaysTemplate)
         iv.tintColor = UIColor.lightGrayColor()
+        iv.contentMode = .ScaleAspectFill
         return iv
     }()
     

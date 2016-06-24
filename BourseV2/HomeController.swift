@@ -53,10 +53,18 @@ class HomeController: UIViewController {
         view.addSubview(menuBar)
         view.addSubview(subMenuBar)
         view.addSubview(tabContent)
+        tabContent.homeController = self
         view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
         view.addConstraintsWithFormat("H:|[v0]|", views: subMenuBar)
         view.addConstraintsWithFormat("H:|[v0]|", views: tabContent)
         view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, subMenuBar,tabContent)
+    }
+    
+    
+    func showAppDetailForApp() {
+        let layout = UICollectionViewFlowLayout()
+        let appDetailController = ObligationDetailController(collectionViewLayout: layout)
+        navigationController?.pushViewController(appDetailController, animated: true)
     }
     
 }
