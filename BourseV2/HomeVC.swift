@@ -136,7 +136,6 @@ class HomeController: UIViewController {
         }
         
         if menuID == 0 {
-            
             actualiteSubMenu.hidden = true
             marcheSubMenu.hidden = false
             tabContent.hidden =  false
@@ -146,8 +145,8 @@ class HomeController: UIViewController {
     }
     
     func showAppDetailForApp() {
-        let layout = UICollectionViewFlowLayout()
-        let appDetailController = ObligationDetailController(collectionViewLayout: layout)
+        //let layout = UICollectionViewFlowLayout()
+        let appDetailController =  DetailViewController()
         navigationController?.pushViewController(appDetailController, animated: true)
     }
     

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		066A277200763A7090167AFE /* Pods_BourseV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0323641CB7FD9D19FAAC1363 /* Pods_BourseV2.framework */; };
 		5009AF1B1D1C294400EACDB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF1A1D1C294400EACDB8 /* AppDelegate.swift */; };
-		5009AF1D1D1C294400EACDB8 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF1C1D1C294400EACDB8 /* HomeController.swift */; };
+		5009AF1D1D1C294400EACDB8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5009AF1C1D1C294400EACDB8 /* HomeVC.swift */; };
 		5009AF201D1C294400EACDB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5009AF1E1D1C294400EACDB8 /* Main.storyboard */; };
 		5009AF221D1C294400EACDB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5009AF211D1C294400EACDB8 /* Assets.xcassets */; };
 		5009AF251D1C294400EACDB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5009AF231D1C294400EACDB8 /* LaunchScreen.storyboard */; };
@@ -29,12 +29,14 @@
 		5059AD131D1E6F9100C296A6 /* MarcheSubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059AD121D1E6F9100C296A6 /* MarcheSubMenu.swift */; };
 		5059AD161D1E70F700C296A6 /* DetailSubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059AD151D1E70F700C296A6 /* DetailSubMenu.swift */; };
 		5059AD191D1E813400C296A6 /* ActualiteSubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059AD181D1E813400C296A6 /* ActualiteSubMenu.swift */; };
+		5059AD1C1D1EA36400C296A6 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059AD1B1D1EA36400C296A6 /* DetailVC.swift */; };
+		5059AD1E1D1EA53200C296A6 /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059AD1D1D1EA53200C296A6 /* MenuHeader.swift */; };
+		5059AD201D1EABF100C296A6 /* DetailContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059AD1F1D1EABF100C296A6 /* DetailContent.swift */; };
 		5088F5531D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088F54B1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m */; };
 		5088F5541D1CAC4A002A6BC0 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088F54D1D1CAC4A002A6BC0 /* MMDrawerController.m */; };
 		5088F5551D1CAC4A002A6BC0 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088F5501D1CAC4A002A6BC0 /* MMDrawerVisualState.m */; };
 		5088F5561D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088F5521D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m */; };
 		50D0230F1D1D46B8008E5B8C /* ContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */; };
-		50D023111D1D8EC0008E5B8C /* ObligationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D023101D1D8EC0008E5B8C /* ObligationDetailController.swift */; };
 		50F2280B1D1DAB7E00234D31 /* TestContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2280A1D1DAB7E00234D31 /* TestContent.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +45,7 @@
 		31AE482C3EB3C47E49B469D3 /* Pods-BourseV2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BourseV2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BourseV2/Pods-BourseV2.debug.xcconfig"; sourceTree = "<group>"; };
 		5009AF171D1C294400EACDB8 /* BourseV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BourseV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5009AF1A1D1C294400EACDB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5009AF1C1D1C294400EACDB8 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		5009AF1C1D1C294400EACDB8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5009AF1F1D1C294400EACDB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5009AF211D1C294400EACDB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5009AF241D1C294400EACDB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,9 @@
 		5059AD121D1E6F9100C296A6 /* MarcheSubMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarcheSubMenu.swift; sourceTree = "<group>"; };
 		5059AD151D1E70F700C296A6 /* DetailSubMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSubMenu.swift; sourceTree = "<group>"; };
 		5059AD181D1E813400C296A6 /* ActualiteSubMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualiteSubMenu.swift; sourceTree = "<group>"; };
+		5059AD1B1D1EA36400C296A6 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		5059AD1D1D1EA53200C296A6 /* MenuHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
+		5059AD1F1D1EABF100C296A6 /* DetailContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContent.swift; sourceTree = "<group>"; };
 		5088F54A1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
 		5088F54B1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
 		5088F54C1D1CAC4A002A6BC0 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
@@ -76,7 +81,6 @@
 		5088F5511D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		5088F5521D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionView.swift; sourceTree = "<group>"; };
-		50D023101D1D8EC0008E5B8C /* ObligationDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObligationDetailController.swift; sourceTree = "<group>"; };
 		50F2280A1D1DAB7E00234D31 /* TestContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestContent.swift; sourceTree = "<group>"; };
 		BC4257D497550799353FD842 /* Pods-BourseV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BourseV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BourseV2/Pods-BourseV2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +118,7 @@
 		5009AF191D1C294400EACDB8 /* BourseV2 */ = {
 			isa = PBXGroup;
 			children = (
+				5059AD1A1D1E894000C296A6 /* Service */,
 				5009AF301D1C2A3500EACDB8 /* View */,
 				5009AF2F1D1C2A1C00EACDB8 /* Controller */,
 				5009AF2C1D1C2A0200EACDB8 /* Helpers */,
@@ -139,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				5009AF3A1D1C9CED00EACDB8 /* SideBar */,
-				5009AF1C1D1C294400EACDB8 /* HomeController.swift */,
-				50D023101D1D8EC0008E5B8C /* ObligationDetailController.swift */,
+				5009AF1C1D1C294400EACDB8 /* HomeVC.swift */,
+				5059AD1B1D1EA36400C296A6 /* DetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -221,6 +226,8 @@
 			children = (
 				5059ACF91D1E699F00C296A6 /* Custom Cells */,
 				5059AD151D1E70F700C296A6 /* DetailSubMenu.swift */,
+				5059AD1D1D1EA53200C296A6 /* MenuHeader.swift */,
+				5059AD1F1D1EABF100C296A6 /* DetailContent.swift */,
 			);
 			name = DetailVC;
 			sourceTree = "<group>";
@@ -232,6 +239,13 @@
 				50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */,
 			);
 			name = Content;
+			sourceTree = "<group>";
+		};
+		5059AD1A1D1E894000C296A6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		E4EAEB42F7B6E91869676FE3 /* Frameworks */ = {
@@ -374,7 +388,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5009AF1D1D1C294400EACDB8 /* HomeController.swift in Sources */,
+				5059AD201D1EABF100C296A6 /* DetailContent.swift in Sources */,
+				5009AF1D1D1C294400EACDB8 /* HomeVC.swift in Sources */,
 				5059AD081D1E6B6F00C296A6 /* MySubMenuCell.swift in Sources */,
 				5059AD0A1D1E6BC900C296A6 /* MyMenuCell.swift in Sources */,
 				5088F5531D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m in Sources */,
@@ -385,12 +400,13 @@
 				5059AD161D1E70F700C296A6 /* DetailSubMenu.swift in Sources */,
 				5088F5551D1CAC4A002A6BC0 /* MMDrawerVisualState.m in Sources */,
 				5059AD061D1E6AE000C296A6 /* CustomCellFeed.swift in Sources */,
-				50D023111D1D8EC0008E5B8C /* ObligationDetailController.swift in Sources */,
 				5009AF371D1C460C00EACDB8 /* SWRevealViewController.m in Sources */,
 				5088F5561D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m in Sources */,
 				5059AD031D1E6A6700C296A6 /* ActBarCell.swift in Sources */,
+				5059AD1C1D1EA36400C296A6 /* DetailVC.swift in Sources */,
 				5009AF321D1C2A8E00EACDB8 /* MenuBar.swift in Sources */,
 				5059AD0F1D1E6DAD00C296A6 /* MenuVC.swift in Sources */,
+				5059AD1E1D1EA53200C296A6 /* MenuHeader.swift in Sources */,
 				5059AD191D1E813400C296A6 /* ActualiteSubMenu.swift in Sources */,
 				50D0230F1D1D46B8008E5B8C /* ContentCollectionView.swift in Sources */,
 				5009AF1B1D1C294400EACDB8 /* AppDelegate.swift in Sources */,
