@@ -1,19 +1,17 @@
 //
-//  SubMenu.swift
+//  ActualiteSubMenu.swift
 //  BourseV2
 //
-//  Created by Med Beji on 24/06/2016.
+//  Created by Med Beji on 25/06/2016.
 //  Copyright © 2016 alphalab. All rights reserved.
 //
 
 import UIKit
 
 
-class SubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ActualiteSubMenu : UIView , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var homeController: HomeController?
-    
-    
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -25,12 +23,14 @@ class SubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelegate, UI
     }()
     
     let cellId = "cellId"
-    let subMenuTitles = ["OBLIGATIONS", "DEVISES", "MATIERES PREMIERE"]
     
-    override init(frame: CGRect) {
+    let  subMenuTitles = ["ACT 1","ACT 2","ACT 3","ACT 4","ACT 5","ACT 6"]
+    
+    
+    override init(frame: CGRect ) {
         super.init(frame: frame)
         
-        collectionView.registerClass(MyCustomCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.registerClass(MySubMenuCell.self, forCellWithReuseIdentifier: cellId)
         
         addSubview(collectionView)
         addConstraintsWithFormat("H:|[v0]|", views: collectionView)
@@ -45,7 +45,7 @@ class SubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelegate, UI
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! MyCustomCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! MySubMenuCell
         
         cell.textlabel.text = subMenuTitles[indexPath.row]
         
@@ -61,52 +61,13 @@ class SubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelegate, UI
         return 0
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("View TaB from row \(indexPath.row)")
-        homeController?.changingTab(Int(indexPath.row))
-    }
     
-}
-
-
-
-
-
-class MyCustomCell: BaseCell {
-    
-    let textlabel: UILabel = {
-        let iv = UILabel()
-        iv.textColor = UIColor.rgb(156, green: 156, blue: 156)
-        iv.font = UIFont.boldSystemFontOfSize(14.0)
-        return iv
-    }()
-    
-    override var highlighted: Bool {
-        didSet {
-            
-            backgroundColor = highlighted ? UIColor.darkGrayColor() : UIColor.whiteColor()
-            
-        }
-    }
-    
-    override var selected: Bool {
-        didSet {
-            textlabel.textColor = selected ? UIColor.blackColor() : UIColor.rgb(156, green: 156, blue: 156)
-        }
-    }
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(textlabel)
-        addConstraintsWithFormat("H:[v0]", views: textlabel)
-        addConstraintsWithFormat("V:[v0(28)]", views: textlabel)
-        
-        addConstraint(NSLayoutConstraint(item: textlabel, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: textlabel, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
-    }
     
 }

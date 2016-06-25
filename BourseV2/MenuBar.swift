@@ -10,6 +10,8 @@ import UIKit
 
 class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    var homeController: HomeController?
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -25,7 +27,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        collectionView.registerClass(MenuCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.registerClass(MyMenuCell.self, forCellWithReuseIdentifier: cellId)
         
         addSubview(collectionView)
         addConstraintsWithFormat("H:|[v0]|", views: collectionView)
@@ -40,7 +42,7 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! MenuCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellId, forIndexPath: indexPath) as! MyMenuCell
         
         cell.imageView.image = UIImage(named: imageNames[indexPath.item])?.imageWithRenderingMode(.AlwaysTemplate)
         cell.tintColor = UIColor.rgb(156, green: 156, blue: 156)
@@ -56,61 +58,15 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
         return 0
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-class BaseCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    func setupViews() {
-        
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        homeController?.switchingBetweenMenus(Int(indexPath.row))
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-
-
-class MenuCell: BaseCell {
-    
-    let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.image = UIImage(named: "home")?.imageWithRenderingMode(.AlwaysTemplate)
-        iv.tintColor = UIColor.rgb(156, green: 156, blue: 156)
-        return iv
-    }()
-    
-    override var highlighted: Bool {
-        didSet {
-            imageView.tintColor = highlighted ? UIColor.whiteColor() : UIColor.rgb(156, green: 156, blue: 156)
-            
-        }
-    }
-    
-    override var selected: Bool {
-        didSet {
-            imageView.tintColor = selected ? UIColor.whiteColor() : UIColor.rgb(156, green: 156, blue: 156)
-        }
-    }
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(imageView)
-        addConstraintsWithFormat("H:[v0(28)]", views: imageView)
-        addConstraintsWithFormat("V:[v0(28)]", views: imageView)
-        
-        addConstraint(NSLayoutConstraint(item: imageView, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: imageView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0))
-    }
     
 }
+
+
 

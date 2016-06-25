@@ -11,13 +11,25 @@ import UIKit
 class ObligationDetailController: UICollectionViewController, UICollectionViewDelegateFlowLayout  {
     
     private let headerId = "headerId"
-    private let cellId = "cellID"
+    private let chartCellId = "chartCell"
+    private let infoCellId = "infoCellId"
+    private let actualityBarCell = "actualityBarCell"
+    private let actualityCell = "actualityCell"
+    
     override func viewDidLoad() {
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor.redColor()
-        //        collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId )
+        
+        // Registering my Cells
         collectionView?.registerClass(OppDetailHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
+        collectionView?.registerClass(DetailChartCell.self, forCellWithReuseIdentifier: chartCellId )
+        collectionView?.registerClass(DetailInfoCell.self, forCellWithReuseIdentifier: infoCellId )
+        collectionView?.registerClass(ActBarCell.self, forCellWithReuseIdentifier: actualityBarCell )
+        collectionView?.registerClass(ActCell.self, forCellWithReuseIdentifier: actualityCell )
+        
     }
+    
+    // Header Settings
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: headerId, forIndexPath: indexPath) as! OppDetailHeader
@@ -28,56 +40,68 @@ class ObligationDetailController: UICollectionViewController, UICollectionViewDe
         return CGSizeMake(collectionView.frame.width, 135)
     }
     
+    // Cell Settings
     
-}
-
-class OppDetailHeader: BaseCell {
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
     
-    let priceLabel : UILabel  = {
-        let price = UILabel()
-        price.text = "5.189,50"
-        price.font = UIFont.boldSystemFontOfSize(25)
-        return price
-    }()
-    
-    
-    let percentage: UILabel = {
-        let text = UILabel()
-        text.text = "-3,80 (-0,03%)"
-        text.textColor = UIColor.redColor()
-        text.font =  UIFont.boldSystemFontOfSize(21)
-        return text
-    }()
-    
-    let  timeDescription: UILabel = {
-        let text = UILabel()
-        text.text = "10:07:50 - CFD en temps réel"
-        text.textColor = UIColor.lightGrayColor()
-        text.font =  UIFont.systemFontOfSize(15)
-        return text
-    }()
-    
-    let menuBar: SubMenu = {
-        let mb = SubMenu()
-        return mb
-    }()
-    
-    override func setupViews() {
-        addSubview(priceLabel)
-        addSubview(percentage)
-        addSubview(timeDescription)
-        addSubview(menuBar)
-        backgroundColor = UIColor.rgb(236, green: 236, blue: 236)
-        addConstraintsWithFormat("H:|-35-[v0]-30-[v1]", views: priceLabel,percentage)
-        addConstraintsWithFormat("V:|-16-[v0(40)]-4-[v1]-16-[v2]|", views: priceLabel,timeDescription,menuBar)
-        addConstraintsWithFormat("H:|-35-[v0]", views: timeDescription)
-        addConstraintsWithFormat("V:|-18-[v0(40)]", views: percentage)
-        addConstraintsWithFormat("H:|[v0]|", views: menuBar)
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        if indexPath.item == 1 {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(infoCellId, forIndexPath: indexPath) as! DetailInfoCell
+            return cell
+        }
+        if indexPath.item == 2 {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(actualityBarCell, forIndexPath: indexPath) as! ActBarCell
+            return cell
+        }
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(chartCellId, forIndexPath: indexPath) as! DetailChartCell
+            return cell
+        }
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(actualityCell, forIndexPath: indexPath) as! ActCell
+        
+        return cell
         
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        if indexPath.item == 2 {
+            return CGSizeMake(view.frame.width, 30)
+        }
+        if indexPath.item == 3 {
+            return CGSizeMake(view.frame.width, 80)
+            
+        }
+        return CGSizeMake(view.frame.width, 200)
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
