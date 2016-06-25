@@ -14,7 +14,8 @@ class DetailViewController: UIViewController {
         //        view.backgroundColor = UIColor.rgb(250, green: 250, blue: 250)
         view.backgroundColor = UIColor.greenColor()
         setupViews()
-        
+        navigationItem.backBarButtonItem?.tintColor = UIColor.blackColor()
+        navigationItem.title = "Hello"
     }
     
     let header :MenuHeader = {
