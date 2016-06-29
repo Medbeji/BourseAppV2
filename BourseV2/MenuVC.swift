@@ -12,6 +12,24 @@ class MenuVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.greenColor()
+        setupViews()
+    }
+    
+    let sideBarMenu: SideBarMenu =  {
+        let sbm = SideBarMenu()
+        return sbm
+    }()
+    
+    
+    func setupViews() {
+        
+        view.addSubview(sideBarMenu)
+        
+        view.addConstraintsWithFormat("H:|[v0]|", views: sideBarMenu)
+        view.addConstraintsWithFormat("V:|[v0]|", views: sideBarMenu)
+        
+        
         
     }
 }

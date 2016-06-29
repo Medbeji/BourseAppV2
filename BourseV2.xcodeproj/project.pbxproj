@@ -38,6 +38,8 @@
 		5088F5561D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088F5521D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m */; };
 		50D0230F1D1D46B8008E5B8C /* ContentCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */; };
 		50F2280B1D1DAB7E00234D31 /* TestContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2280A1D1DAB7E00234D31 /* TestContent.swift */; };
+		50F235801D236C7B008219E4 /* SideBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2357F1D236C7A008219E4 /* SideBarMenu.swift */; };
+		50F235821D23708C008219E4 /* SbarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F235811D23708C008219E4 /* SbarCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		5088F5521D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		50D0230E1D1D46B8008E5B8C /* ContentCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentCollectionView.swift; sourceTree = "<group>"; };
 		50F2280A1D1DAB7E00234D31 /* TestContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestContent.swift; sourceTree = "<group>"; };
+		50F2357F1D236C7A008219E4 /* SideBarMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenu.swift; sourceTree = "<group>"; };
+		50F235811D23708C008219E4 /* SbarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SbarCell.swift; sourceTree = "<group>"; };
 		BC4257D497550799353FD842 /* Pods-BourseV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BourseV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BourseV2/Pods-BourseV2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +151,7 @@
 				5009AF3A1D1C9CED00EACDB8 /* SideBar */,
 				5009AF1C1D1C294400EACDB8 /* HomeVC.swift */,
 				5059AD1B1D1EA36400C296A6 /* DetailVC.swift */,
+				5059AD0E1D1E6DAD00C296A6 /* MenuVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 		5009AF301D1C2A3500EACDB8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				50F2357D1D236C4A008219E4 /* MenuVC */,
 				5059AD101D1E6F4400C296A6 /* DetailVC */,
 				5059AD0B1D1E6C6200C296A6 /* HomeVC */,
 				5059ACF81D1E699200C296A6 /* Custom Cells */,
@@ -164,7 +170,6 @@
 		5009AF3A1D1C9CED00EACDB8 /* SideBar */ = {
 			isa = PBXGroup;
 			children = (
-				5059AD0E1D1E6DAD00C296A6 /* MenuVC.swift */,
 				5088F54A1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.h */,
 				5088F54B1D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m */,
 				5088F54C1D1CAC4A002A6BC0 /* MMDrawerController.h */,
@@ -254,6 +259,23 @@
 			children = (
 			);
 			name = Modal;
+			sourceTree = "<group>";
+		};
+		50F2357D1D236C4A008219E4 /* MenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				50F2357E1D236C5C008219E4 /* CustomCells */,
+				50F2357F1D236C7A008219E4 /* SideBarMenu.swift */,
+			);
+			name = MenuVC;
+			sourceTree = "<group>";
+		};
+		50F2357E1D236C5C008219E4 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				50F235811D23708C008219E4 /* SbarCell.swift */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 		E4EAEB42F7B6E91869676FE3 /* Frameworks */ = {
@@ -403,6 +425,7 @@
 				5088F5531D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m in Sources */,
 				5059AD131D1E6F9100C296A6 /* MarcheSubMenu.swift in Sources */,
 				5059ACFF1D1E6A3500C296A6 /* DetailChartCell.swift in Sources */,
+				50F235801D236C7B008219E4 /* SideBarMenu.swift in Sources */,
 				5088F5541D1CAC4A002A6BC0 /* MMDrawerController.m in Sources */,
 				5009AF2E1D1C2A0E00EACDB8 /* Extensions.swift in Sources */,
 				5059AD161D1E70F700C296A6 /* DetailSubMenu.swift in Sources */,
@@ -417,6 +440,7 @@
 				5059AD1E1D1EA53200C296A6 /* MenuHeader.swift in Sources */,
 				5059AD191D1E813400C296A6 /* ActualiteSubMenu.swift in Sources */,
 				50D0230F1D1D46B8008E5B8C /* ContentCollectionView.swift in Sources */,
+				50F235821D23708C008219E4 /* SbarCell.swift in Sources */,
 				5009AF1B1D1C294400EACDB8 /* AppDelegate.swift in Sources */,
 				5059ACFB1D1E69CB00C296A6 /* BaseCell.swift in Sources */,
 				5059ACFD1D1E6A1C00C296A6 /* DetailInfoCell.swift in Sources */,

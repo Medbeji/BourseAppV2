@@ -27,8 +27,10 @@ class MyMenuCell: BaseCell {
     override var selected: Bool {
         didSet {
             imageView.tintColor = selected ? UIColor.whiteColor() : UIColor.rgb(156, green: 156, blue: 156)
+            
         }
     }
+    
     
     override func setupViews() {
         super.setupViews()

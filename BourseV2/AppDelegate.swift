@@ -42,12 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Test 
         
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         let centerViewController = HomeController()
         
-        let leftViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MenuVC") as! MenuVC
-        
+        let leftViewController = MenuVC()
         
         let leftSideNav = UINavigationController(rootViewController: leftViewController)
         let centerNav = UINavigationController(rootViewController: centerViewController)

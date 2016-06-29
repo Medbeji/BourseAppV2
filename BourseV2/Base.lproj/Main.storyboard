@@ -5,40 +5,30 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--MenuVC-->
-        <scene sceneID="V0o-gg-pp1">
+        <!--View Controller-->
+        <scene sceneID="840-Zz-5sf">
             <objects>
-                <viewController storyboardIdentifier="MenuVC" id="Vgm-dP-EqZ" customClass="MenuVC" customModule="BourseV2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KMK-NV-RqV" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Aeb-Nf-tRS"/>
-                        <viewControllerLayoutGuide type="bottom" id="qBC-gD-SIZ"/>
+                        <viewControllerLayoutGuide type="top" id="Hee-Qn-Iyh"/>
+                        <viewControllerLayoutGuide type="bottom" id="fp8-SI-RtE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rXy-wj-yLS">
+                    <view key="view" contentMode="scaleToFill" id="CTj-ap-YG1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello world" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4s-PJ-Ebw">
-                                <rect key="frame" x="31" y="56" width="86" height="21"/>
-                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="FFw-JH-3oS"/>
-                                    <constraint firstAttribute="height" constant="21" id="QQf-2Q-Su9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-Uh-Gyr">
+                                <rect key="frame" x="360" y="398" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.34019862947442114" green="0.49285291721523128" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="K4s-PJ-Ebw" firstAttribute="top" secondItem="Aeb-Nf-tRS" secondAttribute="bottom" constant="36" id="7rb-Sw-wNL"/>
-                            <constraint firstItem="K4s-PJ-Ebw" firstAttribute="leading" secondItem="rXy-wj-yLS" secondAttribute="leading" constant="31" id="tUI-io-epf"/>
-                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Brl-hK-nEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Km-pi-bQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1774" y="-150"/>
+            <point key="canvasLocation" x="-1451" y="-404"/>
         </scene>
     </scenes>
 </document>

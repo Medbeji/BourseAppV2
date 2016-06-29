@@ -60,7 +60,15 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         homeController?.switchingBetweenMenus(Int(indexPath.row))
+        collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.blackColor()
     }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.rgb(42, green: 42, blue: 42)
+        
+    }
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

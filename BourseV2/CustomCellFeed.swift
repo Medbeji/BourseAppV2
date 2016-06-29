@@ -11,13 +11,13 @@ class CustomCellFeed : BaseCell {
     
     let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.blackColor()
+        view.backgroundColor = UIColor.rgb(230, green: 230, blue: 230)
         return view
     }()
     
     let verticalSeparator: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.lightGrayColor()
+        view.backgroundColor = UIColor.rgb(230, green: 230, blue: 230)
         return view
     }()
     

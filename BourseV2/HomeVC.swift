@@ -12,6 +12,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.blackColor()
         navigationItem.title = "Home"
         navigationController?.navigationBar.translucent = false
         setupMenuBar()
@@ -48,8 +49,6 @@ class HomeController: UIViewController {
     }()
     
     
-    
-    
     let tabContent: ContentCollectionView = {
         let tc = ContentCollectionView()
         return tc
@@ -67,6 +66,8 @@ class HomeController: UIViewController {
         menuBar.homeController  = self
         tabContent.hidden = false
         tabContent1.hidden = true
+        menuBar.layer.borderWidth = 1
+        menuBar.layer.borderColor = UIColor.blackColor().CGColor
         view.addSubview(menuBar)
         view.addSubview(actualiteSubMenu)
         view.addSubview(marcheSubMenu)
