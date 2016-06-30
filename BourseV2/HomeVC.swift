@@ -21,9 +21,12 @@ class HomeController: UIViewController {
     }
     
     func setupBarButtons(){
-        let sideBar = UIBarButtonItem(image: UIImage(named: "menu")?.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)))
-        //     self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        let sideBar = UIBarButtonItem(image: UIImage(named: "menu")?.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(HomeController.openMenu(_:)))
         navigationItem.leftBarButtonItem =  sideBar
+    }
+    func openMenu(sender: UIBarButtonItem) {
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left,animated: true, completion: nil)
     }
     
     
