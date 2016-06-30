@@ -15,7 +15,9 @@ class MarcheSubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelega
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .Horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.showsHorizontalScrollIndicator = false
         cv.backgroundColor = UIColor.whiteColor()
         cv.dataSource = self
         cv.delegate = self
@@ -24,7 +26,7 @@ class MarcheSubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelega
     
     let cellId = "cellId"
     
-    let  subMenuTitles = ["OBLIGATIONS","DEVISES","MATIERES PREMIERES "]
+    let  subMenuTitles = ["COTATION ","PALMARES ","INDICES ","OBLIGATIONS ","DEVISES ","MATIERES PREMIERES "]
     
     
     override init(frame: CGRect ) {
@@ -49,21 +51,19 @@ class MarcheSubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelega
         
         cell.textlabel.text = subMenuTitles[indexPath.row]
         
-        
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(frame.width / CGFloat(subMenuTitles.count) , frame.height)
+        return CGSizeMake(frame.width / 3, frame.height)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 0
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
-        homeController?.changingTab(Int(indexPath.row))
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {    
+        homeController?.switchingBetweenSubMenus(Int(indexPath.row))
     }
     
     required init?(coder aDecoder: NSCoder) {

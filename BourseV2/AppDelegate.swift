@@ -47,14 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let centerViewController = HomeController()
         
         let leftViewController = MenuVC()
-        
+        leftViewController.homeController  = centerViewController
         let leftSideNav = UINavigationController(rootViewController: leftViewController)
         let centerNav = UINavigationController(rootViewController: centerViewController)
         
         centerContainer = MMDrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav)
         
-        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
-        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
+        //        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
+        //        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
         
         window!.rootViewController = centerContainer
         window!.makeKeyAndVisible()

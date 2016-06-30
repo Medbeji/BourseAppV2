@@ -11,6 +11,7 @@ import UIKit
 
 class SideBarMenu: UIView ,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     
+    var homeController: HomeController?
     
     
     lazy var collectionView: UICollectionView = {
@@ -104,6 +105,16 @@ class SideBarMenu: UIView ,UICollectionViewDataSource, UICollectionViewDelegate,
         fatalError("init(coder:) has not been implemented")
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 5 {
+            homeController?.showSettings()
+        }
+        if indexPath.row != 4 {
+            homeController?.switchFromMenu(indexPath)
+        }
+        
+        
+    }
     
     
 }

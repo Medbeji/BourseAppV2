@@ -1,21 +1,23 @@
 //
-//  ActualiteSubMenu.swift
+//  CalendrierSubMenu.swift
 //  BourseV2
 //
-//  Created by Med Beji on 25/06/2016.
+//  Created by Med Beji on 30/06/2016.
 //  Copyright © 2016 alphalab. All rights reserved.
 //
 
 import UIKit
 
 
-class ActualiteSubMenu : UIView , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class CalendrierSubMenu : UIView , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var homeController: HomeController?
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .Horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.showsHorizontalScrollIndicator = false
         cv.backgroundColor = UIColor.whiteColor()
         cv.dataSource = self
         cv.delegate = self
@@ -24,7 +26,7 @@ class ActualiteSubMenu : UIView , UICollectionViewDataSource, UICollectionViewDe
     
     let cellId = "cellId"
     
-    let  subMenuTitles = ["INFO SOCIÉTÉS","NEWS"]
+    let  subMenuTitles = ["HIER","AUJOURD'HUI","DEMAIN","CETTE SEMAINE"]
     
     
     override init(frame: CGRect ) {
@@ -54,7 +56,7 @@ class ActualiteSubMenu : UIView , UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(frame.width / CGFloat(subMenuTitles.count) , frame.height)
+        return CGSizeMake(frame.width / 3 , frame.height)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {

@@ -11,6 +11,8 @@ import UIKit
 class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     var homeController: HomeController?
+    var lastSelected : NSIndexPath?
+    var shouldDeleteLastCellSelection : Bool = false
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -60,12 +62,21 @@ class MenuBar: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UIC
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         homeController?.switchingBetweenMenus(Int(indexPath.row))
+        if shouldDeleteLastCellSelection {
+            collectionView.cellForItemAtIndexPath(lastSelected!)?.backgroundColor = UIColor.rgb(42, green: 42, blue: 42)
+            collectionView.cellForItemAtIndexPath(lastSelected!)?.highlighted = false
+            shouldDeleteLastCellSelection = false
+        }
+        
         collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.blackColor()
+        collectionView.cellForItemAtIndexPath(indexPath)?.highlighted = true
+        lastSelected = indexPath
+        shouldDeleteLastCellSelection = true
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         collectionView.cellForItemAtIndexPath(indexPath)?.backgroundColor = UIColor.rgb(42, green: 42, blue: 42)
-        
+        collectionView.cellForItemAtIndexPath(indexPath)?.highlighted = false
     }
     
     

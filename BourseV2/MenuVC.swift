@@ -10,6 +10,8 @@ import UIKit
 
 class MenuVC: UIViewController {
     
+    var homeController: HomeController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false;
@@ -17,7 +19,7 @@ class MenuVC: UIViewController {
         setupViews()
     }
     
-    let sideBarMenu: SideBarMenu =  {
+    var sideBarMenu: SideBarMenu =  {
         let sbm = SideBarMenu()
         return sbm
     }()
@@ -29,11 +31,18 @@ class MenuVC: UIViewController {
     
     
     func setupViews() {
+        sideBarMenu.homeController = homeController
         view.addSubview(sideBarMenu)
         view.addSubview(menuTitle)
         view.addConstraintsWithFormat("H:|[v0]|", views: sideBarMenu)
         view.addConstraintsWithFormat("H:|[v0]|", views: menuTitle)
         view.addConstraintsWithFormat("V:|-20-[v0(30)]-0-[v1]|", views:menuTitle, sideBarMenu)
+    }
+    
+    func showSettings() {
+        //let layout = UICollectionViewFlowLayout()
+        let settingsVC =  SettingVC()
+        navigationController?.pushViewController(settingsVC, animated: true)
     }
 }
 
