@@ -47,7 +47,7 @@ class DetailContent: UIView , UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  8
+        return  4
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -71,13 +71,18 @@ class DetailContent: UIView , UICollectionViewDataSource, UICollectionViewDelega
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         if indexPath.item == 2 {
-            return CGSizeMake(collectionView.frame.width, 30)
+            print("Pourcentage height for Chart / 30 = \(collectionView.frame.height / 30 )")
+            return CGSizeMake(collectionView.frame.width, collectionView.frame.height / 16.5666666666667)
         }
         if indexPath.item == 3 {
-            return CGSizeMake(collectionView.frame.width, 80)
+            print("Pourcentage height for Chart / 80 = \(collectionView.frame.height / 80 )")
+            
+            return CGSizeMake(collectionView.frame.width, collectionView.frame.height  / 6.2125)
             
         }
-        return CGSizeMake(collectionView.frame.width, 200)    }
+        print("Pourcentage height for Chart / 200 = \(collectionView.frame.height / 200 )")
+        // regler avec iphone 6s plus resolutions
+        return CGSizeMake(collectionView.frame.width, collectionView.frame.height / 2.485)    }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 0

@@ -13,7 +13,7 @@ class OppDetailHeader: BaseCell {
     let priceLabel : UILabel  = {
         let price = UILabel()
         price.text = "5.189,50"
-        price.font = UIFont.boldSystemFontOfSize(25)
+        price.font = UIFont.boldSystemFontOfSize(FontSizes.s25)
         return price
     }()
     
@@ -22,7 +22,7 @@ class OppDetailHeader: BaseCell {
         let text = UILabel()
         text.text = "-3,80 (-0,03%)"
         text.textColor = UIColor.redColor()
-        text.font =  UIFont.boldSystemFontOfSize(21)
+        text.font =  UIFont.boldSystemFontOfSize(FontSizes.s21)
         return text
     }()
     
@@ -30,7 +30,7 @@ class OppDetailHeader: BaseCell {
         let text = UILabel()
         text.text = "10:07:50 - CFD en temps réel"
         text.textColor = UIColor.lightGrayColor()
-        text.font =  UIFont.systemFontOfSize(15)
+        text.font =  UIFont.systemFontOfSize(FontSizes.s15)
         return text
     }()
     

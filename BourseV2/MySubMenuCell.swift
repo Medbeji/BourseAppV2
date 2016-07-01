@@ -14,7 +14,7 @@ class MySubMenuCell: BaseCell {
     let textlabel: UILabel = {
         let iv = UILabel()
         iv.textColor = UIColor.rgb(156, green: 156, blue: 156)
-        iv.font = UIFont.boldSystemFontOfSize(12.0)
+        iv.font = UIFont.boldSystemFontOfSize(FontSizes.s12)
         return iv
     }()
     

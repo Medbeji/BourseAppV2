@@ -20,6 +20,12 @@
 		5011E1CA1D25312E00CB113A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1C91D25312D00CB113A /* Constants.swift */; };
 		5011E1CC1D25395B00CB113A /* PortefeuilleSubMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1CB1D25395B00CB113A /* PortefeuilleSubMenu.swift */; };
 		5011E1CE1D253EF800CB113A /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1CD1D253EF800CB113A /* SettingVC.swift */; };
+		5011E1D01D2558A100CB113A /* Actualite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1CF1D2558A100CB113A /* Actualite.swift */; };
+		5011E1D71D257C6D00CB113A /* InfoSociete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1D61D257C6D00CB113A /* InfoSociete.swift */; };
+		5011E1D91D25800400CB113A /* ActualiteFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011E1D81D25800400CB113A /* ActualiteFeedCell.swift */; };
+		502B04B61D26C4ED004E39EC /* TodayTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B04B51D26C4ED004E39EC /* TodayTab.swift */; };
+		502B04B81D26C526004E39EC /* CalendrierCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B04B71D26C526004E39EC /* CalendrierCustomCell.swift */; };
+		502B04BA1D26C595004E39EC /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502B04B91D26C595004E39EC /* AutoLayout.swift */; };
 		5059ACFB1D1E69CB00C296A6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059ACFA1D1E69CB00C296A6 /* BaseCell.swift */; };
 		5059ACFD1D1E6A1C00C296A6 /* DetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059ACFC1D1E6A1C00C296A6 /* DetailInfoCell.swift */; };
 		5059ACFF1D1E6A3500C296A6 /* DetailChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5059ACFE1D1E6A3500C296A6 /* DetailChartCell.swift */; };
@@ -65,6 +71,12 @@
 		5011E1C91D25312D00CB113A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5011E1CB1D25395B00CB113A /* PortefeuilleSubMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortefeuilleSubMenu.swift; sourceTree = "<group>"; };
 		5011E1CD1D253EF800CB113A /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		5011E1CF1D2558A100CB113A /* Actualite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actualite.swift; sourceTree = "<group>"; };
+		5011E1D61D257C6D00CB113A /* InfoSociete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoSociete.swift; sourceTree = "<group>"; };
+		5011E1D81D25800400CB113A /* ActualiteFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualiteFeedCell.swift; sourceTree = "<group>"; };
+		502B04B51D26C4ED004E39EC /* TodayTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTab.swift; sourceTree = "<group>"; };
+		502B04B71D26C526004E39EC /* CalendrierCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendrierCustomCell.swift; sourceTree = "<group>"; };
+		502B04B91D26C595004E39EC /* AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		5059ACFA1D1E69CB00C296A6 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		5059ACFC1D1E6A1C00C296A6 /* DetailInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailInfoCell.swift; sourceTree = "<group>"; };
 		5059ACFE1D1E6A3500C296A6 /* DetailChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailChartCell.swift; sourceTree = "<group>"; };
@@ -199,8 +211,84 @@
 			isa = PBXGroup;
 			children = (
 				5011E1C91D25312D00CB113A /* Constants.swift */,
+				502B04B91D26C595004E39EC /* AutoLayout.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		5011E1D11D257BE300CB113A /* ActualiteBar */ = {
+			isa = PBXGroup;
+			children = (
+				5011E1D51D257C3400CB113A /* InfoSociétés */,
+				5059AD181D1E813400C296A6 /* ActualiteSubMenu.swift */,
+			);
+			name = ActualiteBar;
+			sourceTree = "<group>";
+		};
+		5011E1D21D257BF800CB113A /* MarcheBar */ = {
+			isa = PBXGroup;
+			children = (
+				5059AD121D1E6F9100C296A6 /* MarcheSubMenu.swift */,
+				5059AD171D1E7BC900C296A6 /* Content */,
+			);
+			name = MarcheBar;
+			sourceTree = "<group>";
+		};
+		5011E1D31D257C0200CB113A /* CalendrierBar */ = {
+			isa = PBXGroup;
+			children = (
+				502B04B41D26C4BA004E39EC /* Next Week */,
+				502B04B31D26C4AF004E39EC /* Tommorow */,
+				502B04B21D26C4A6004E39EC /* Yesterday */,
+				502B04B11D26C4A1004E39EC /* Today */,
+				5011E1C61D25218B00CB113A /* CalendrierSubMenu.swift */,
+			);
+			name = CalendrierBar;
+			sourceTree = "<group>";
+		};
+		5011E1D41D257C1000CB113A /* Portefeuille */ = {
+			isa = PBXGroup;
+			children = (
+				5011E1CB1D25395B00CB113A /* PortefeuilleSubMenu.swift */,
+			);
+			name = Portefeuille;
+			sourceTree = "<group>";
+		};
+		5011E1D51D257C3400CB113A /* InfoSociétés */ = {
+			isa = PBXGroup;
+			children = (
+				5011E1D61D257C6D00CB113A /* InfoSociete.swift */,
+			);
+			name = "InfoSociétés";
+			sourceTree = "<group>";
+		};
+		502B04B11D26C4A1004E39EC /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				502B04B51D26C4ED004E39EC /* TodayTab.swift */,
+			);
+			name = Today;
+			sourceTree = "<group>";
+		};
+		502B04B21D26C4A6004E39EC /* Yesterday */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Yesterday;
+			sourceTree = "<group>";
+		};
+		502B04B31D26C4AF004E39EC /* Tommorow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tommorow;
+			sourceTree = "<group>";
+		};
+		502B04B41D26C4BA004E39EC /* Next Week */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Next Week";
 			sourceTree = "<group>";
 		};
 		5059ACF81D1E699200C296A6 /* Custom Cells */ = {
@@ -229,6 +317,8 @@
 				5059AD051D1E6AE000C296A6 /* CustomCellFeed.swift */,
 				5059AD071D1E6B6F00C296A6 /* MySubMenuCell.swift */,
 				5059AD091D1E6BC900C296A6 /* MyMenuCell.swift */,
+				5011E1D81D25800400CB113A /* ActualiteFeedCell.swift */,
+				502B04B71D26C526004E39EC /* CalendrierCustomCell.swift */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -236,13 +326,12 @@
 		5059AD0B1D1E6C6200C296A6 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
-				5059AD171D1E7BC900C296A6 /* Content */,
-				5059AD041D1E6AC900C296A6 /* Custom Cells */,
 				5009AF311D1C2A8E00EACDB8 /* MenuBar.swift */,
-				5059AD121D1E6F9100C296A6 /* MarcheSubMenu.swift */,
-				5059AD181D1E813400C296A6 /* ActualiteSubMenu.swift */,
-				5011E1C61D25218B00CB113A /* CalendrierSubMenu.swift */,
-				5011E1CB1D25395B00CB113A /* PortefeuilleSubMenu.swift */,
+				5011E1D41D257C1000CB113A /* Portefeuille */,
+				5011E1D31D257C0200CB113A /* CalendrierBar */,
+				5011E1D21D257BF800CB113A /* MarcheBar */,
+				5011E1D11D257BE300CB113A /* ActualiteBar */,
+				5059AD041D1E6AC900C296A6 /* Custom Cells */,
 			);
 			name = HomeVC;
 			sourceTree = "<group>";
@@ -277,6 +366,7 @@
 		5059AD241D1ECAF400C296A6 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				5011E1CF1D2558A100CB113A /* Actualite.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -438,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502B04BA1D26C595004E39EC /* AutoLayout.swift in Sources */,
 				5059AD201D1EABF100C296A6 /* DetailContent.swift in Sources */,
 				5009AF1D1D1C294400EACDB8 /* HomeVC.swift in Sources */,
 				5059AD081D1E6B6F00C296A6 /* MySubMenuCell.swift in Sources */,
@@ -457,8 +548,11 @@
 				5009AF371D1C460C00EACDB8 /* SWRevealViewController.m in Sources */,
 				5088F5561D1CAC4A002A6BC0 /* UIViewController+MMDrawerController.m in Sources */,
 				5059AD031D1E6A6700C296A6 /* ActBarCell.swift in Sources */,
+				502B04B81D26C526004E39EC /* CalendrierCustomCell.swift in Sources */,
 				5059AD1C1D1EA36400C296A6 /* DetailVC.swift in Sources */,
+				502B04B61D26C4ED004E39EC /* TodayTab.swift in Sources */,
 				5009AF321D1C2A8E00EACDB8 /* MenuBar.swift in Sources */,
+				5011E1D71D257C6D00CB113A /* InfoSociete.swift in Sources */,
 				5059AD0F1D1E6DAD00C296A6 /* MenuVC.swift in Sources */,
 				5059AD1E1D1EA53200C296A6 /* MenuHeader.swift in Sources */,
 				5011E1C71D25218C00CB113A /* CalendrierSubMenu.swift in Sources */,
@@ -466,6 +560,8 @@
 				50D0230F1D1D46B8008E5B8C /* ContentCollectionView.swift in Sources */,
 				50F235821D23708C008219E4 /* SbarCell.swift in Sources */,
 				5009AF1B1D1C294400EACDB8 /* AppDelegate.swift in Sources */,
+				5011E1D01D2558A100CB113A /* Actualite.swift in Sources */,
+				5011E1D91D25800400CB113A /* ActualiteFeedCell.swift in Sources */,
 				5059ACFB1D1E69CB00C296A6 /* BaseCell.swift in Sources */,
 				5059ACFD1D1E6A1C00C296A6 /* DetailInfoCell.swift in Sources */,
 				5059AD011D1E6A4B00C296A6 /* ActCell.swift in Sources */,

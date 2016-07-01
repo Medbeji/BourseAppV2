@@ -17,7 +17,9 @@ class DetailSubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelega
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .Horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.showsHorizontalScrollIndicator = false
         cv.backgroundColor = UIColor.whiteColor()
         cv.dataSource = self
         cv.delegate = self
@@ -26,7 +28,7 @@ class DetailSubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelega
     
     let cellId = "cellId"
     
-    let  subMenuTitles = ["GENERAL","COMPOSANTS","CARNET","TRANSACTION "]
+    let  subMenuTitles = ["GENERAL","COMPOSANTS","CARNET","TRANSACTION ","ACTUALITE"]
     
     
     override init(frame: CGRect ) {
@@ -56,7 +58,7 @@ class DetailSubMenu: UIView , UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(frame.width / CGFloat(subMenuTitles.count) , frame.height)
+        return CGSizeMake(frame.width / 4 , frame.height)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {

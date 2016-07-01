@@ -55,13 +55,15 @@ class HomeController: UIViewController {
         view.addSubview(marcheSubMenu)
         view.addSubview(COTATION)
         view.addSubview(PALMARES)
+        view.addSubview(INFOSOCIETE)
         
         
-        
+        INFOSOCIETE.hidden = false
         marcheSubMenu.hidden =  false
         actualiteSubMenu.hidden = true
         calendrierSubMenu.hidden = true
         portefeuilleSubMenu.hidden = true
+        CALENDRIERCONTENT.hidden  = true
         COTATION.homeController = self
         PALMARES.homeController = self
         marcheSubMenu.homeController = self
@@ -93,13 +95,16 @@ class HomeController: UIViewController {
             view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
             view.addConstraintsWithFormat("H:|[v0]|", views: actualiteSubMenu)
             view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]", views: menuBar, actualiteSubMenu)
-            
+            view.addConstraintsWithFormat("H:|[v0]|", views: INFOSOCIETE)
+            view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, actualiteSubMenu,INFOSOCIETE)
             
         }
         if ( !calendrierSubMenu.hidden) {
             view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
             view.addConstraintsWithFormat("H:|[v0]|", views: calendrierSubMenu)
-            view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]", views: menuBar, calendrierSubMenu)
+            view.addConstraintsWithFormat("H:|[v0]|", views: CALENDRIERCONTENT)
+            view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, calendrierSubMenu,CALENDRIERCONTENT)
+            
         }
         if  (!portefeuilleSubMenu.hidden) {
             view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
@@ -138,9 +143,17 @@ class HomeController: UIViewController {
         if menuID == 0 {
             
             // Hide Actualité tab
+            INFOSOCIETE.hidden = true
             actualiteSubMenu.hidden = true
+            //   INFOSOCIETE.removeFromSuperview()
             actualiteSubMenu.removeFromSuperview()
             
+            
+            // Hide Calendrier tab 
+            CALENDRIERCONTENT.hidden = true
+            CALENDRIERCONTENT.removeFromSuperview()
+            calendrierSubMenu.hidden = true
+            calendrierSubMenu.removeFromSuperview()
             
             // Hide Portefeuille Tab
             portefeuilleSubMenu.hidden = true
@@ -168,7 +181,9 @@ class HomeController: UIViewController {
             COTATION.removeFromSuperview()
             PALMARES.removeFromSuperview()
             
-            // Hide Calendrier tab 
+            // Hide Calendrier tab
+            CALENDRIERCONTENT.hidden = true
+            CALENDRIERCONTENT.removeFromSuperview()
             calendrierSubMenu.hidden = true
             calendrierSubMenu.removeFromSuperview()
             
@@ -178,8 +193,9 @@ class HomeController: UIViewController {
             
             // Show Actualite tab 
             actualiteSubMenu.hidden = false
+            INFOSOCIETE.hidden = false
             view.addSubview(actualiteSubMenu)
-            
+            view.addSubview(INFOSOCIETE)
         }
         
         
@@ -194,17 +210,21 @@ class HomeController: UIViewController {
             COTATION.removeFromSuperview()
             PALMARES.removeFromSuperview()
             // Hide Actualité tab
+            INFOSOCIETE.hidden = true
             actualiteSubMenu.hidden = true
+            INFOSOCIETE.removeFromSuperview()
             actualiteSubMenu.removeFromSuperview()
             
             
-            // Hide Portefeuille Tab  
+            // Hide Portefeuille Tab
             portefeuilleSubMenu.hidden = true
             portefeuilleSubMenu.removeFromSuperview()
             
             
             // Show Calendrier Tab
             calendrierSubMenu.hidden = false
+            CALENDRIERCONTENT.hidden = false
+            view.addSubview(CALENDRIERCONTENT)
             view.addSubview(calendrierSubMenu)
             
         }
@@ -219,12 +239,17 @@ class HomeController: UIViewController {
             COTATION.removeFromSuperview()
             PALMARES.removeFromSuperview()
             // Hide Actualité tab
+            INFOSOCIETE.hidden = true
             actualiteSubMenu.hidden = true
+            INFOSOCIETE.removeFromSuperview()
             actualiteSubMenu.removeFromSuperview()
             
             // Hide Calendrier tab
+            CALENDRIERCONTENT.hidden = true
+            CALENDRIERCONTENT.removeFromSuperview()
             calendrierSubMenu.hidden = true
             calendrierSubMenu.removeFromSuperview()
+            
             
             // Show Portefeuille Tab
             if ( _isConnected ){
@@ -254,17 +279,10 @@ class HomeController: UIViewController {
     
     var deletedLast  : Bool = true
     func switchFromMenu(id : NSIndexPath) {
-        //        if !deletedLast {
-        //            //            menuBar.collectionView(menuBar.collectionView, didUnhighlightItemAtIndexPath: lastIndex)
-        //            menuBar.collectionView(menuBar.collectionView,didDeselectItemAtIndexPath: menuBar.lastSelected)
-        //        }
-        //        //        menuBar.collectionView(menuBar.collectionView, didHighlightItemAtIndexPath: id)
         appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left,animated: true, completion: nil)
         menuBar.collectionView(menuBar.collectionView, didSelectItemAtIndexPath: id)
         menuBar.lastSelected = id
         menuBar.shouldDeleteLastCellSelection = true 
-        //        deletedLast = false
-        
     }
 }
 

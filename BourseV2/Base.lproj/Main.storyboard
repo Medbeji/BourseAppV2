@@ -4,31 +4,5 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
-    <scenes>
-        <!--View Controller-->
-        <scene sceneID="840-Zz-5sf">
-            <objects>
-                <viewController id="KMK-NV-RqV" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Hee-Qn-Iyh"/>
-                        <viewControllerLayoutGuide type="bottom" id="fp8-SI-RtE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CTj-ap-YG1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk6-Uh-Gyr">
-                                <rect key="frame" x="360" y="398" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.27843137254901962" green="0.28235294117647058" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Km-pi-bQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1451" y="-404"/>
-        </scene>
-    </scenes>
+    <scenes/>
 </document>

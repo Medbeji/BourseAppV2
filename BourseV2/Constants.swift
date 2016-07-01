@@ -45,3 +45,16 @@ let portefeuilleSubMenu: PortefeuilleSubMenu = {
     let p = PortefeuilleSubMenu()
     return p
 }()
+
+let INFOSOCIETE: InfoSociete = {
+    let  info = InfoSociete()
+    return info
+}()
+
+
+let CALENDRIERCONTENT: TodayTab = {
+    let info = TodayTab()
+    return info
+}()
+
+

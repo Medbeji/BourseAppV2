@@ -13,6 +13,8 @@ class ActBarCell : BaseCell {
         let abl = UILabel()
         
         abl.text = "CAC 40 Actualités"
+        abl.font =  UIFont.boldSystemFontOfSize(FontSizes.s13)
+        
         return abl
         
     }()
@@ -38,9 +40,9 @@ class ActBarCell : BaseCell {
         addSubview(actBarLabel)
         addSubview(verticalSeparator)
         addSubview(image)
-        
+        print("View height\(frame.height)")
         addConstraintsWithFormat("H:|-16-[v0][v1(1)]-2-[v2(20)]-2-|", views: actBarLabel,verticalSeparator,image)
-        addConstraintsWithFormat("V:|-2-[v0(30)]", views: image)
+        addConstraintsWithFormat("V:|-2-[v0(\(frame.height-4))]-2-|", views: image)
         addConstraintsWithFormat("V:|[v0]|", views: actBarLabel)
         addConstraintsWithFormat("V:|-2-[v0]-2-|", views: verticalSeparator)
         

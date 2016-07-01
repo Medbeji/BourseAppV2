@@ -14,7 +14,7 @@ class SbarCell : BaseCell {
         let label = UILabel()
         label.text = "hello"
         label.textColor = UIColor.rgb(156, green: 156, blue: 156)
-        
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     

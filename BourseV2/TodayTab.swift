@@ -1,16 +1,17 @@
 //
-//  ContentCollectionView.swift
+//  TodayTab.swift
 //  BourseV2
 //
-//  Created by Med Beji on 24/06/2016.
+//  Created by Med Beji on 01/07/2016.
 //  Copyright © 2016 alphalab. All rights reserved.
 //
 
+
 import UIKit
 
-class ContentCollectionView: UIView , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+class TodayTab : UIView , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     
-    var homeController: HomeController?
+    
     
     
     lazy var collectionView: UICollectionView = {
@@ -27,7 +28,7 @@ class ContentCollectionView: UIView , UICollectionViewDataSource, UICollectionVi
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        collectionView.registerClass(CustomCellFeed.self, forCellWithReuseIdentifier: cellId)
+        collectionView.registerClass(CalendrierCustomCell.self, forCellWithReuseIdentifier: cellId)
         addSubview(collectionView)
         addConstraintsWithFormat("H:|[v0]|", views: collectionView)
         addConstraintsWithFormat("V:|[v0]|", views: collectionView)
@@ -37,37 +38,31 @@ class ContentCollectionView: UIView , UICollectionViewDataSource, UICollectionVi
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 3
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellId", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellId", forIndexPath: indexPath) as! CalendrierCustomCell
+        cell.titleCol.adjustsFontSizeToFitWidth = true
         
         return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        var frameHeight:CGFloat = 0.0
-        print(collectionView.frame.height)
-        if collectionView.frame.height == 306.0 || collectionView.frame.height == 394.0 {
-            frameHeight = 50
-        } else {
-            frameHeight = collectionView.frame.height / 11.24
-        }
         
-        
-        return CGSizeMake(collectionView.frame.width, frameHeight )
+        return CGSizeMake(collectionView.frame.width, collectionView.frame.height / 5.10909090909091)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return 0
+        return 1
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         print("View detail from row \(indexPath.row)")
-        homeController?.showAppDetailForApp()
+        
     }
     
 }
-
 

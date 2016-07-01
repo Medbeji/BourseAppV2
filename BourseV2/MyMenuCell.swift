@@ -20,14 +20,12 @@ class MyMenuCell: BaseCell {
     override var highlighted: Bool {
         didSet {
             imageView.tintColor = highlighted ? UIColor.whiteColor() : UIColor.rgb(156, green: 156, blue: 156)
-            print("highlighted is called ")
         }
     }
     
     override var selected: Bool {
         didSet {
             imageView.tintColor = selected ? UIColor.whiteColor() : UIColor.rgb(156, green: 156, blue: 156)
-            print("selected is colled ")
         }
     }
     
