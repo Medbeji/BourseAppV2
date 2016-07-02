@@ -20,7 +20,7 @@ class ActualiteFeedCell : BaseCell {
     let titleCol: UILabel = {
         let text = UILabel()
         text.text = "Royaume Uni: -0,4 % de production industrielle en juin"
-        
+        //        text.backgroundColor = UIColor.blueColor()
         text.font = UIFont.systemFontOfSize(FontSizes.s15)
         
         text.numberOfLines = 2
@@ -38,9 +38,9 @@ class ActualiteFeedCell : BaseCell {
     
     let imageView:UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = UIColor.clearColor()
-        iv.tintColor = UIColor.lightGrayColor()
-        iv.contentMode = .ScaleAspectFill
+        //        iv.backgroundColor = UIColor.redColor()
+        iv.image = UIImage(named:"act1")
+        iv.contentMode = .ScaleToFill
         return iv
     }()
     
@@ -57,9 +57,9 @@ class ActualiteFeedCell : BaseCell {
         //        print("title height par rapport total height\(frame.height / 50 ) et date Place = \(frame.height / 24) ")
         //
         let spacingHeight = frame.height / 13.75
-        let spacingWidth = frame.width / 51.75
+        let spacingWidth = frame.width / 45
         //        let imageHeight = frame.height  / 1.375
-        let imageWidth = frame.width / 5.175
+        let imageWidth = frame.width / 4
         let titleHeight = frame.height  / 2.2
         let dateHeight = frame.height / 4.58333333333333
         //        let titleWidth = frame

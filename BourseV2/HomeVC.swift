@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeController: UIViewController {
-    var _isConnected = true
+    var _isConnected = false
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blackColor()
@@ -17,9 +17,13 @@ class HomeController: UIViewController {
         navigationController?.navigationBar.translucent = false
         setupMenuBar()
         setupBarButtons()
+        hideBarOnSlide()
+    }
+    func hideBarOnSlide() {
+        
+        menuBar.topAnchor.constraintEqualToAnchor(topLayoutGuide.bottomAnchor).active = true
         
     }
-    
     func setupBarButtons(){
         let sideBar = UIBarButtonItem(image: UIImage(named: "menu")?.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(HomeController.openMenu(_:)))
         navigationItem.leftBarButtonItem =  sideBar
@@ -33,6 +37,7 @@ class HomeController: UIViewController {
     
     
     
+    
     func handleMore() {
         print ("hello world ")
     }
@@ -42,13 +47,13 @@ class HomeController: UIViewController {
     
     private func setupMenuBar() {
         
-        
         marcheSubMenu.homeController = self
         menuBar.homeController  = self
         COTATION.hidden = false
         PALMARES.hidden = true
         menuBar.layer.borderWidth = 1
         menuBar.layer.borderColor = UIColor.blackColor().CGColor
+        navigationController?.hidesBarsOnSwipe = true
         
         view.addSubview(menuBar)
         // view.addSubview(actualiteSubMenu)
@@ -57,7 +62,7 @@ class HomeController: UIViewController {
         view.addSubview(PALMARES)
         view.addSubview(INFOSOCIETE)
         
-        
+        loginPage.hidden = true
         INFOSOCIETE.hidden = false
         marcheSubMenu.hidden =  false
         actualiteSubMenu.hidden = true
@@ -73,43 +78,38 @@ class HomeController: UIViewController {
     }
     // changing between views 
     
+    func layoutTab(submenu: UIView,content: UIView) {
+        view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
+        view.addConstraintsWithFormat("H:|[v0]|", views: submenu)
+        view.addConstraintsWithFormat("H:|[v0]|", views: content)
+        view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, submenu,content)
+    }
+    
     
     func settingConstraint () {
+        
         if (!marcheSubMenu.hidden) {
             if ( !COTATION.hidden ) {
-                print ( " tab content 1 is hidden")
-                view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
-                view.addConstraintsWithFormat("H:|[v0]|", views: marcheSubMenu)
-                view.addConstraintsWithFormat("H:|[v0]|", views: COTATION)
-                view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, marcheSubMenu,COTATION)
+                layoutTab(marcheSubMenu, content: COTATION)
             } else  if (!PALMARES.hidden) {
-                print ( " tab content 0 is hidden")
-                view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
-                view.addConstraintsWithFormat("H:|[v0]|", views: marcheSubMenu)
-                view.addConstraintsWithFormat("H:|[v0]|", views: PALMARES)
-                view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, marcheSubMenu,PALMARES)
+                layoutTab(marcheSubMenu, content: PALMARES)
             }
         }
         if ( !actualiteSubMenu.hidden) {
-            
-            view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
-            view.addConstraintsWithFormat("H:|[v0]|", views: actualiteSubMenu)
-            view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]", views: menuBar, actualiteSubMenu)
-            view.addConstraintsWithFormat("H:|[v0]|", views: INFOSOCIETE)
-            view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, actualiteSubMenu,INFOSOCIETE)
-            
+            layoutTab(actualiteSubMenu, content: INFOSOCIETE)
         }
         if ( !calendrierSubMenu.hidden) {
-            view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
-            view.addConstraintsWithFormat("H:|[v0]|", views: calendrierSubMenu)
-            view.addConstraintsWithFormat("H:|[v0]|", views: CALENDRIERCONTENT)
-            view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]-0-[v2]|", views: menuBar, calendrierSubMenu,CALENDRIERCONTENT)
-            
+            layoutTab(calendrierSubMenu, content: CALENDRIERCONTENT)
         }
         if  (!portefeuilleSubMenu.hidden) {
             view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
             view.addConstraintsWithFormat("H:|[v0]|", views: portefeuilleSubMenu)
             view.addConstraintsWithFormat("V:|[v0(65)]-0-[v1(45)]", views: menuBar, portefeuilleSubMenu)
+        }
+        if (!loginPage.hidden){
+            view.addConstraintsWithFormat("H:|[v0]|", views: menuBar)
+            view.addConstraintsWithFormat("H:|[v0]|", views: loginPage)
+            view.addConstraintsWithFormat("V:|[v0(65)][v1]|", views: menuBar, loginPage)
         }
         
         
@@ -138,88 +138,58 @@ class HomeController: UIViewController {
         }
     }
     
-    func switchingBetweenMenus(menuID : Int){
+    func hidesOthersTabBarItems() {
         
-        if menuID == 0 {
-            
-            // Hide Actualité tab
-            INFOSOCIETE.hidden = true
-            actualiteSubMenu.hidden = true
-            //   INFOSOCIETE.removeFromSuperview()
-            actualiteSubMenu.removeFromSuperview()
-            
-            
-            // Hide Calendrier tab 
-            CALENDRIERCONTENT.hidden = true
-            CALENDRIERCONTENT.removeFromSuperview()
-            calendrierSubMenu.hidden = true
-            calendrierSubMenu.removeFromSuperview()
-            
-            // Hide Portefeuille Tab
-            portefeuilleSubMenu.hidden = true
-            portefeuilleSubMenu.removeFromSuperview()
+        // Hide marche tab
+        marcheSubMenu.hidden = true
+        COTATION.hidden =  true
+        PALMARES.hidden = true
+        
+        
+        // Hide Actualité tab
+        INFOSOCIETE.hidden = true
+        actualiteSubMenu.hidden = true
+        //   INFOSOCIETE.removeFromSuperview()
+        actualiteSubMenu.removeFromSuperview()
+        
+        
+        // Hide Calendrier tab
+        CALENDRIERCONTENT.hidden = true
+        CALENDRIERCONTENT.removeFromSuperview()
+        calendrierSubMenu.hidden = true
+        calendrierSubMenu.removeFromSuperview()
+        
+        // Hide Portefeuille Tab
+        portefeuilleSubMenu.hidden = true
+        portefeuilleSubMenu.removeFromSuperview()
+        loginPage.hidden = true
+        
+    }
+    
+    func switchingBetweenMenus(menuID : Int){
+        hidesOthersTabBarItems()
+        
+        switch ( menuID ){
+        case 0:
             
             // Show Marche Tab
             marcheSubMenu.hidden = false
             COTATION.hidden =  false
             PALMARES.hidden = false
             
+            
             view.addSubview(marcheSubMenu)
             view.addSubview(COTATION)
             view.addSubview(PALMARES)
             
-        }
-        
-        
-        if menuID == 1 {
-            // Hide marche tab
-            marcheSubMenu.hidden = true
-            COTATION.hidden =  true
-            PALMARES.hidden = true
-            
-            marcheSubMenu.removeFromSuperview()
-            COTATION.removeFromSuperview()
-            PALMARES.removeFromSuperview()
-            
-            // Hide Calendrier tab
-            CALENDRIERCONTENT.hidden = true
-            CALENDRIERCONTENT.removeFromSuperview()
-            calendrierSubMenu.hidden = true
-            calendrierSubMenu.removeFromSuperview()
-            
-            // Hide Portefeuille Tab
-            portefeuilleSubMenu.hidden = true
-            portefeuilleSubMenu.removeFromSuperview()
-            
-            // Show Actualite tab 
+        case 1:
+            // Show Actualite tab
             actualiteSubMenu.hidden = false
             INFOSOCIETE.hidden = false
             view.addSubview(actualiteSubMenu)
             view.addSubview(INFOSOCIETE)
-        }
-        
-        
-        
-        if menuID == 2{
-            // Hide marche tab
-            marcheSubMenu.hidden = true
-            COTATION.hidden =  true
-            PALMARES.hidden = true
             
-            marcheSubMenu.removeFromSuperview()
-            COTATION.removeFromSuperview()
-            PALMARES.removeFromSuperview()
-            // Hide Actualité tab
-            INFOSOCIETE.hidden = true
-            actualiteSubMenu.hidden = true
-            INFOSOCIETE.removeFromSuperview()
-            actualiteSubMenu.removeFromSuperview()
-            
-            
-            // Hide Portefeuille Tab
-            portefeuilleSubMenu.hidden = true
-            portefeuilleSubMenu.removeFromSuperview()
-            
+        case 2:
             
             // Show Calendrier Tab
             calendrierSubMenu.hidden = false
@@ -227,38 +197,22 @@ class HomeController: UIViewController {
             view.addSubview(CALENDRIERCONTENT)
             view.addSubview(calendrierSubMenu)
             
-        }
-        
-        if menuID == 3 {
-            // Hide marche tab
-            marcheSubMenu.hidden = true
-            COTATION.hidden =  true
-            PALMARES.hidden = true
-            
-            marcheSubMenu.removeFromSuperview()
-            COTATION.removeFromSuperview()
-            PALMARES.removeFromSuperview()
-            // Hide Actualité tab
-            INFOSOCIETE.hidden = true
-            actualiteSubMenu.hidden = true
-            INFOSOCIETE.removeFromSuperview()
-            actualiteSubMenu.removeFromSuperview()
-            
-            // Hide Calendrier tab
-            CALENDRIERCONTENT.hidden = true
-            CALENDRIERCONTENT.removeFromSuperview()
-            calendrierSubMenu.hidden = true
-            calendrierSubMenu.removeFromSuperview()
-            
+        case 3:
             
             // Show Portefeuille Tab
             if ( _isConnected ){
                 portefeuilleSubMenu.hidden = false
                 view.addSubview(portefeuilleSubMenu)
             }else {
+                loginPage.hidden = false
+                view.addSubview(loginPage)
                 print("his not connected")
             }
+        default :
+            print("default switch")
+            
         }
+        
         
         settingConstraint()
     }

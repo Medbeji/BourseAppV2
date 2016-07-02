@@ -41,12 +41,12 @@ class TodayTab : UIView , UICollectionViewDataSource, UICollectionViewDelegate, 
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 8
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellId", forIndexPath: indexPath) as! CalendrierCustomCell
-        cell.titleCol.adjustsFontSizeToFitWidth = true
+        //        cell.titleCol.adjustsFontSizeToFitWidth = true
         
         return cell
     }

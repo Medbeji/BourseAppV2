@@ -50,6 +50,7 @@
 		50F2280B1D1DAB7E00234D31 /* TestContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2280A1D1DAB7E00234D31 /* TestContent.swift */; };
 		50F235801D236C7B008219E4 /* SideBarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F2357F1D236C7A008219E4 /* SideBarMenu.swift */; };
 		50F235821D23708C008219E4 /* SbarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F235811D23708C008219E4 /* SbarCell.swift */; };
+		50F28FCA1D27F22A0049AAA2 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F28FC91D27F22A0049AAA2 /* LoginPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		50F2280A1D1DAB7E00234D31 /* TestContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestContent.swift; sourceTree = "<group>"; };
 		50F2357F1D236C7A008219E4 /* SideBarMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenu.swift; sourceTree = "<group>"; };
 		50F235811D23708C008219E4 /* SbarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SbarCell.swift; sourceTree = "<group>"; };
+		50F28FC91D27F22A0049AAA2 /* LoginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		BC4257D497550799353FD842 /* Pods-BourseV2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BourseV2.release.xcconfig"; path = "Pods/Target Support Files/Pods-BourseV2/Pods-BourseV2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,7 @@
 		5011E1D41D257C1000CB113A /* Portefeuille */ = {
 			isa = PBXGroup;
 			children = (
+				50F28FC71D27F1C90049AAA2 /* Login Page */,
 				5011E1CB1D25395B00CB113A /* PortefeuilleSubMenu.swift */,
 			);
 			name = Portefeuille;
@@ -386,6 +389,14 @@
 				50F235811D23708C008219E4 /* SbarCell.swift */,
 			);
 			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		50F28FC71D27F1C90049AAA2 /* Login Page */ = {
+			isa = PBXGroup;
+			children = (
+				50F28FC91D27F22A0049AAA2 /* LoginPage.swift */,
+			);
+			name = "Login Page";
 			sourceTree = "<group>";
 		};
 		E4EAEB42F7B6E91869676FE3 /* Frameworks */ = {
@@ -536,6 +547,7 @@
 				5059AD0A1D1E6BC900C296A6 /* MyMenuCell.swift in Sources */,
 				5088F5531D1CAC4A002A6BC0 /* MMDrawerBarButtonItem.m in Sources */,
 				5059AD131D1E6F9100C296A6 /* MarcheSubMenu.swift in Sources */,
+				50F28FCA1D27F22A0049AAA2 /* LoginPage.swift in Sources */,
 				5011E1CE1D253EF800CB113A /* SettingVC.swift in Sources */,
 				5059ACFF1D1E6A3500C296A6 /* DetailChartCell.swift in Sources */,
 				50F235801D236C7B008219E4 /* SideBarMenu.swift in Sources */,

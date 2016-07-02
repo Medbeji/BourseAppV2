@@ -38,11 +38,26 @@ class PortefeuilleSubMenu : UIView , UICollectionViewDataSource, UICollectionVie
         addSubview(collectionView)
         addConstraintsWithFormat("H:|[v0]|", views: collectionView)
         addConstraintsWithFormat("V:|[v0]|", views: collectionView)
+        setupHorizontalBar()
         
         let selectedIndexPath = NSIndexPath(forItem: 0, inSection: 0)
         collectionView.selectItemAtIndexPath(selectedIndexPath, animated: false, scrollPosition: .None)
     }
+    var horizontalBarLeftAnchorConstraint: NSLayoutConstraint?
     
+    func setupHorizontalBar() {
+        let horizontalBarView = UIView()
+        horizontalBarView.backgroundColor = UIColor.blackColor()
+        horizontalBarView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(horizontalBarView)
+        
+        horizontalBarLeftAnchorConstraint = horizontalBarView.leftAnchor.constraintEqualToAnchor(self.leftAnchor)
+        horizontalBarLeftAnchorConstraint?.active = true
+        
+        horizontalBarView.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
+        horizontalBarView.widthAnchor.constraintEqualToAnchor(self.widthAnchor, multiplier: 1/3).active = true
+        horizontalBarView.heightAnchor.constraintEqualToConstant(4).active = true
+    }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return subMenuTitles.count
     }
@@ -65,7 +80,13 @@ class PortefeuilleSubMenu : UIView , UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let x = CGFloat(indexPath.item) * frame.width / 3
+        horizontalBarLeftAnchorConstraint?.constant = x
         
+        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .CurveEaseOut, animations: {
+            self.layoutIfNeeded()
+            self.homeController?.switchingBetweenSubMenus(Int(indexPath.row))
+            }, completion: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

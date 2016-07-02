@@ -57,4 +57,9 @@ let CALENDRIERCONTENT: TodayTab = {
     return info
 }()
 
+let loginPage : LoginPage = {
+    let login = LoginPage()
+    return login
+}()
+
 
